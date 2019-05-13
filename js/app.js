@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const saveForm = document.querySelector('#form');
   saveForm.addEventListener('submit', handleFormSubmit);
+
+  const deleteButton = document.querySelector('#delete-all');
+  deleteButton.addEventListener('click', handleDeleteAll)
 })
 
 const handleFormSubmit = function (event) {
@@ -29,7 +32,16 @@ const createListItem = function (form) {
   age.textContent = form.age.value;
   listItem.appendChild(age);
 
+  // document.getElementById("form").reset();
+
+
   return listItem
 }
+
+const handleDeleteAll = function(){
+  const retrieveList = document.getElementById('list-heading');
+  while (retrieveList.firstChild) {
+    retrieveList.removeChild(retrieveList.firstChild);
+  }
 
 // what is the difference between querySelector and getElementsById/class
