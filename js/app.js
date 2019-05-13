@@ -39,9 +39,10 @@ const createListItem = function (form) {
 }
 
 const handleDeleteAll = function(){
-  const retrieveList = document.getElementById('list-heading');
+  const retrieveList = document.getElementById('list');
   while (retrieveList.firstChild) {
     retrieveList.removeChild(retrieveList.firstChild);
   }
+}
 
 // what is the difference between querySelector and getElementsById/class
